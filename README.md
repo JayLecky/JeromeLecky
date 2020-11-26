@@ -1,6 +1,6 @@
 # JeromeLecky
 
-This is simple MVC demo project which allows the user to perform CRUD operations via Web Api.
+This is a simple MVC demo project which allows the user to perform CRUD operations via Web Api.
 
 You will need to run the following scripts from here: https://github.com/JayLecky/JeromeLecky/tree/master/JeromeLecky.Api/Sql_Scripts
 
