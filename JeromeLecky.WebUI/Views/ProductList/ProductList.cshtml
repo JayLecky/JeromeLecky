@@ -1,0 +1,51 @@
+﻿@model JeromeLecky.WebUI.Models.ProductListViewModel
+@{ 
+    TempData["State"] = Model.State.ToDisplayString();
+    TempData.Keep();
+}
+
+<div>
+    @Html.Partial("ProductGrid", Model)
+</div>
+<div class="row justify-content-center">
+    @Ajax.ActionLink(
+        "Add Product",
+        "NewProduct",
+        new {
+        productId = Guid.NewGuid()
+        },
+        new AjaxOptions() {
+        HttpMethod = "GET",
+        InsertionMode = InsertionMode.InsertAfter,
+        UpdateTargetId = "ProductForm"
+        }, new {
+        @class = "btn btn-primary"
+        })&nbsp;
+
+    @if (TempData["StockFilter"].ToString() == "0") {@Html.ActionLink("Show In Stock Only", "InStockProducts", null, new { @class = "btn btn-primary" }) } 
+    else { @Html.ActionLink("Show All Products", "AllProducts", null, new { @class = "btn btn-primary" })}    
+    &nbsp;
+</div>
+<!-- MODAL -->
+<div class="modal fade" id="productFormModal" tabindex="-1" role="dialog" aria-labelledby="productFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productFormModalLabel">@TempData["State"].ToString() Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="ProductForm" class="modal-body">
+                @Html.Partial("ProductForm", Model)
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                @if (TempData["State"].ToString() != "Create") { @Html.ActionLink("Delete", "Delete", new { productId = Model.SelectedProduct?.ProductId }, new { @class = "btn btn-primary" }) }
+                <button type="submit" form="productForm" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

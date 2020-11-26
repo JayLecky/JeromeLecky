@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeromeLecky.Api", "JeromeLecky.Api\JeromeLecky.Api.csproj", "{E7672782-FF56-4FB3-91CC-220D66881189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeromeLecky.WebUI", "JeromeLecky.WebUI\JeromeLecky.WebUI.csproj", "{AA727D48-7636-452E-B13D-036B24416F9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7672782-FF56-4FB3-91CC-220D66881189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7672782-FF56-4FB3-91CC-220D66881189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7672782-FF56-4FB3-91CC-220D66881189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7672782-FF56-4FB3-91CC-220D66881189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA727D48-7636-452E-B13D-036B24416F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA727D48-7636-452E-B13D-036B24416F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA727D48-7636-452E-B13D-036B24416F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA727D48-7636-452E-B13D-036B24416F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50FADE6C-B7D0-4691-AE3D-2168A7F72929}
+	EndGlobalSection
+EndGlobal

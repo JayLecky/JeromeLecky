@@ -1,0 +1,52 @@
+﻿@model JeromeLecky.WebUI.Models.ProductListViewModel
+
+<div>
+    <table class="productgrid table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>SKU Code</th>
+                <th>Category</th>
+                <th>Stock Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.Products) {
+                <tr data-rowid="@p.ProductId">
+                    <td>
+                        <span>@p.Name</span>
+                    </td>
+                    <td>
+                        <span>@p.BasePrice</span>
+                    </td>
+                    <td>
+                        <span>@p.SkuCode</span>
+                    </td>
+                    <td>
+                        <span>@p.Category</span>
+                    </td>
+                    <td data-cellid="StockStatus">
+                        <span>@p.StockStatus.ToDisplayString() (@p.StockQuantity)</span>
+                    </td>
+                    <td>
+                        @Ajax.ActionLink(
+                            "Edit",
+                            "SelectProduct",
+                            "ProductList",
+                            new {
+                                productId = @p.ProductId
+                            },
+                            new AjaxOptions() {
+                                HttpMethod = "GET",
+                                InsertionMode = InsertionMode.InsertAfter,
+                                UpdateTargetId = "ProductForm"
+                            },
+                            new { @class = "btn btn-primary btn-sm" })                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Scripts.Render("~/Scripts/ProductGrid/grid.js")
+</div>
